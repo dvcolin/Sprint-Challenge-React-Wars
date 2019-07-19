@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import CardsContainer from './components/CardsContainer';
+import PersonCard from './components/PersonCard';
+import { personIDs } from './data';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,7 +14,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <CardsContainer></CardsContainer>
+      {personIDs.map(id => <PersonCard personID={id}></PersonCard>)};
+      
     </div>
   );
 }
