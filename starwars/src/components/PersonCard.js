@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { PersonName } from './PersonContent';
+import { PersonName, PersonHeight, PersonMass, personGender, personBirthYear, PersonGender, PersonBirthYear } from './PersonContent';
 
 
 function PersonCard (props) {
@@ -14,21 +14,18 @@ function PersonCard (props) {
         Axios.get(`https://swapi.co/api/people/${props.personID}/?format=json`)
 
         .then(res => {
-            
-            const personData = res.data.results;
-            console.log(personData);
-            // const personName = personData.name;
-            // console.log(personName);
-            // const personHeight = personData.height;
-            // const personMass = personData.mass;
-            // const personGender = personData.gender;
-            // const personBirthYear = personData.birth_year;
+            const personData = res.data;
+            const personName = personData.name;
+            const personHeight = personData.height;
+            const personMass = personData.mass;
+            const personGender = personData.gender;
+            const personBirthYear = personData.birth_year;
 
-            // setName(personName);
-            // setHeight(personHeight);
-            // setMass(personMass);
-            // setGender(personGender);
-            // setBirthYear(personBirthYear);
+            setName(personName);
+            setHeight(personHeight);
+            setMass(personMass);
+            setGender(personGender);
+            setBirthYear(personBirthYear);
         })
 
         .catch(err => {
@@ -38,7 +35,11 @@ function PersonCard (props) {
     
     return (
         <div className='person-card'>
-            {/* <PersonName>{name}</PersonName> */}
+            <PersonName>{name}</PersonName>
+            <PersonHeight>Height: {height}</PersonHeight>
+            <PersonMass>Mass: {mass}</PersonMass>
+            <PersonGender>Gender: {gender}</PersonGender>
+            <PersonBirthYear>Birth Year: {birthYear}</PersonBirthYear>
         </div>
     );
 }
