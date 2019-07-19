@@ -6,3 +6,20 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+.cards-container {
+  width: 80%;
+  margin: 0 auto;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+
+}
+.person-card {
+  height: 250px;
+  width: 500px;
+  margin: 2.5rem 0;
+  display: inline-block;
+  margin: 2rem;
+  background: blue;
+}

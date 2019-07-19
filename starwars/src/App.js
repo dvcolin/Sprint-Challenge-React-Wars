@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import PersonCard from './components/PersonCard';
+import CardsContainer from './components/CardsContainer';
 import { personIDs } from './data';
 
 const App = () => {
@@ -14,8 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {personIDs.map(id => <PersonCard personID={id}></PersonCard>)};
-      
+      <CardsContainer></CardsContainer>
     </div>
   );
 }
